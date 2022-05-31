@@ -24,9 +24,9 @@ pipeline {
         stage('Deploy'){
 
             steps {
-                sh """
-                sshagent(['tomcat-creds1']){
 
+                sshagent(['tomcat-creds1']) {
+           
                     sh """
 
                        scp -o StrictHostKeyChecking=no  target/myweb.war  ec2-user@34.203.223.18:/opt/tomcat8/webapps/
