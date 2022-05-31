@@ -1,11 +1,14 @@
 pipeline {
     agent any
+    
     stages {
-        stage("welcome"){
+        stage('GIT CHECKOUT'){
             steps {
-                echo "welcome to jenkins declarative pipeline"
+                git credentialsId: 'GITCREDS', url: 'https://github.com/sunilaws2485/myapp1/'
             }
         }
-
+        
+        
+        
     }
 }
