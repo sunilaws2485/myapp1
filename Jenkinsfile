@@ -25,7 +25,7 @@ pipeline {
 
             steps {
                 sh """
-                sshagent(['tomcat-creds1']) {
+                sshagent(['tomcat-creds1']){
 
                     sh """
 
@@ -34,7 +34,7 @@ pipeline {
                        ssh  ec2-user@34.203.223.18:/opt/tomcat8/bin/shutdown.sh
                        ssh  ec2-user@34.203.223.18:/opt/tomcat8/bin/startup.sh
 
-                       """
+                    """
                        }    
             }
         }         
