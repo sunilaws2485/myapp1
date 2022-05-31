@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('GIT CHECKOUT'){
             steps {
-                git credentialsId: 'GITCREDS', url: 'https://github.com/sunilaws2485/myapp1/'
+                git credentialsId: 'GITCREDS', url: 'https://github.com/sunilaws2485/myapp1'
             }
         }
 
