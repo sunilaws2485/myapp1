@@ -23,6 +23,16 @@ pipeline {
             }
         }     
 
+        stage('test'){
+
+            steps{
+
+            script {
+              def name = "sunil"
+            }
+        }  
+        }   
+
         stage('Deploy'){
 
             steps {
