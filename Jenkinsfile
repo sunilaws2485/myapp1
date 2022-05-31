@@ -1,20 +1,15 @@
 node {
 
-    stage('SCM checkout'){
-       git 'https://github.com/sunilaws2485/myapp1'
-       }
+   properties([parameters([choice(choices: ['master', 'feature-1', 'feature-2'], name: 'branch')])])
 
-    stage('compile-package'){
-        // Get maven home path
-       def mvnHOME = tool name: 'maven3', type: 'maven'
-       sh "${mvnHOME}/bin/mvn package"
-       }
+    stage('SCM CHECKOUT'){
 
-    stage('EMAIL-NOTIFICATION'){
-        mail bcc: '', body: '''Hi team
-
-        Build completed''', cc: '', from: '', replyTo: '', subject: 'Jenkinsbuild-Alert', to: 'sunilaws2485@gmail.com'
+        echo "pull the code from branch : "${params.branch}
+        git url: 'https://github.com/sunilaws2485/myapp1', branch: "${params.branch}"
 
     }
+
+
+
 
 }
